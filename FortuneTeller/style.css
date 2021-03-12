@@ -1,0 +1,139 @@
+*, *:before, *:after{
+
+  box-sizing: border-box;
+
+}
+
+
+header{
+
+	background-color:#BA1C21;
+	color:#FFFFFF;
+	font-family: Georgia, serif;
+	display:block;
+
+
+}
+h1{
+
+	padding: 30px 0px 30px 10px;
+
+
+}
+
+
+h5{
+
+	color: black;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-left: 300px;
+
+}
+
+body {
+
+  background-color:#FFFFFF;
+	color:#666666;
+	font-family: Verdana, Arial, sans-serif;
+	background-image: linear-gradient(white,navy);
+	background-attachment:fixed;
+
+
+}
+
+table{
+
+    width: 80%;
+	border-collapse: collapse;
+	padding: 5px;
+	margin: 10px 100px 30px 100px;
+}
+
+table,td,tr{
+
+	border:1px solid #424242;
+	padding: 10px;
+	font-size: 20px;
+
+
+}
+
+
+
+button{
+
+
+	margin: 10px;
+	background-color: #BA1C21;
+	color: white;
+	font-style: bold;
+
+}
+
+
+tr:nth-of-type(even){
+	background-color: lightgoldenrodyellow;
+
+}
+
+
+
+footer{
+
+	padding: 10px;
+	background-color: lightgoldenrodyellow;
+
+}
+
+#movie {
+
+  font-family: sans-serif;
+}
+
+#seethemovies{
+
+    background-image: url(images/movies.jpg);
+    background-position: center; height: 400px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	
+}
+
+#movielist{
+
+	padding: 5px;
+
+}
+
+#wrapper {
+
+	background-color:#d1cccc;
+	width: 80%;
+	margin-right:auto;
+	margin-left: auto;
+	min-width: 700px;
+	max-width: 1024px;
+	box-shadow: 3px 3px rgba(66,66,66,0.3);
+
+
+}
+
+#tableheader{
+
+		background-color: goldenrod;
+		font-family: Verdana, Arial, sans-serif;
+		font-style: bold;
+		color: white;
+		padding: 5px;
+		
+}
+
+#history{
+
+	font-style: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	color:black;
+}
