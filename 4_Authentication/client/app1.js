@@ -1,8 +1,6 @@
-var heroku_url = "https://stormy-escarpment-54610.herokuapp.com";
-
 var loadSportlisting = function () 
 {
-  fetch(heroku_url + "/sports",{
+  fetch("http://localhost:8080/sports",{
 
   credentials:"include"
   }).then(function (response) 
@@ -104,7 +102,7 @@ var loadSportlisting = function ()
 var deleteSportEvent = function(sportid)
 {
 
-  fetch(heroku_url + "/sports/" + sportid, 
+  fetch("http://localhost:8080/sports/" + sportid, 
   {
 
     method: "DELETE",
@@ -139,7 +137,7 @@ addButton.onclick = function () {
 
   clearInputInsert();
 
-  fetch(heroku_url + "/sports", {
+  fetch("http://localhost:8080/sports", {
     //request parameters:
     method: "POST",
     credentials:"include",
@@ -198,7 +196,7 @@ var updateSportEvent = function (sportid,league,teamname,conferance,teamrank,loc
     loadSportlisting();
     clearInputUpdate();
 
-    fetch(heroku_url + "/sports/" + sportid ,{
+    fetch("http://localhost:8080/sports/" + sportid ,{
       //request parameters:
       method: "PUT",
       credentials:"include",
@@ -354,7 +352,7 @@ registerButton.onclick = function () {
   document.querySelector("#lname_field").value = "";
   document.querySelector("#reg_password").value = "";
 
-  fetch(heroku_url + "/users", {
+  fetch("http://localhost:8080/Users", {
     //request parameters:
     method: "POST",
     credentials:"include",
@@ -369,8 +367,8 @@ registerButton.onclick = function () {
     loadSportlisting()
     if (response.status == 201){
       alert("Congradulation who have successfully registered.")
-      var signinbutton = document.queryElement("#signinsignup");
-      signinbutton.style.display = "none";
+      // var signinbutton = document.queryElement("#signinsignup");
+      // signinbutton.style.display = "none";
       var insertdiv = document.querySelector("#insert_div");
       insertdiv.style.display = "none";
       var regdisplay = document.querySelector("#register_div");
@@ -379,8 +377,6 @@ registerButton.onclick = function () {
       regdisplay.style.display = "none";
       var redisplay = document.querySelector("#edit_div");
       redisplay.style.display = "none";
-      var regdisplay = document.querySelector("#home");
-      regdisplay.style.display = "none";
       var itemlist = document.querySelector("#SportList");
       itemlist.style.display = "block";
       var itemlist = document.querySelector("#history");
@@ -424,7 +420,7 @@ loginButton.onclick = function (Email) {
   document.querySelector("#login_email_field").value = "";
   document.querySelector("#login_password").value = "";
 
-  fetch(heroku_url + "/sessions", {
+  fetch("http://localhost:8080/sessions", {
     //request parameters:
     method: "POST",
     credentials:"include",
@@ -479,9 +475,7 @@ loginButton.onclick = function (Email) {
 
   });
 
-};    
-
-var insertdiv = document.querySelector("#insert_div");
+};     var insertdiv = document.querySelector("#insert_div");
 insertdiv.style.display = "none";
 var regdisplay = document.querySelector("#register_div");
 regdisplay.style.display = "none";

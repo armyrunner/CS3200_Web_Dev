@@ -17,10 +17,8 @@ movielisting.onclick = function() {
    var randomIndex = Math.floor(Math.random()*movies.length);
    var placement = movies[randomIndex];
 
-
-  
    var movielisted = document.querySelector("#placement");
-      movielisted.innerHTML = placement.title;
+   movielisted.innerHTML = placement.title;
 
    var table = document.getElementById("history").insertRow(1);
    var cell1 = table.insertCell(0);

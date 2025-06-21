@@ -6,7 +6,6 @@ from http import cookies
 from passlib.hash import bcrypt
 import hashlib
 from SessionStore import SessionStore
-import  sys
 
 SESSION_STORE = SessionStore()
 
@@ -73,7 +72,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         self.loadSession()
         if self.path == "/sports":
             self.handleCreateSportEvents()
-        elif self.path == "/users":
+        elif self.path == "/Users":
             self.handleCreateUsers()
         elif self.path == "/sessions":
             self.handleVerifyUser()
@@ -102,6 +101,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
     def handleUnprocessableAction(self):
         self.send_response(422)
         self.end_headers()
+        self.wfile.write("Email already exists","utf-8")
 
 
     def RetrieveSportEvents(self):
@@ -314,21 +314,21 @@ class MyRequestHandler(BaseHTTPRequestHandler):
 
 def run():
 
-    db = SportEventsDB()
-    db.createUserTable()
-    db.createSportTable()
-    db = None # disconnect
-
-    port = 8080
-    if len(sys.argv) > 1:
-        port = int(sys.argv[1])
-
-    listen=("0.0.0.0",port)
+    listen=("127.0.0.1", 8080)
     server=HTTPServer(listen, MyRequestHandler)
 
-    print("Server listening on","{}:{}".format(*listen))
+    print("Listening....")
     server.serve_forever()
 
 run()
+
+
+
+
+
+
+
+
+
 
 
